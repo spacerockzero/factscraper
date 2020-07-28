@@ -4,11 +4,20 @@
   "description": "scrape web for facts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test **/*.test.js",
+    "migrate": "cp ./data/facts.json ../facts-lambda/facts.json",
+    "start": "node ./run",
+    "runafterscrape": "node ./runafterscrape"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "puppeteer": "^5.2.1"
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "puppeteer": "^5.2.1",
+    "wordpos": "^2.0.0"
+  },
+  "dependencies": {
+    "md5": "^2.2.1"
   }
 }
